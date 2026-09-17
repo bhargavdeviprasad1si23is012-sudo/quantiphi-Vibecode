@@ -4,7 +4,6 @@
  * and the Workload Balancing burnout detection system.
  */
 
-// ─── Application State ───
 const state = {
   projects: [],
   currentProjectId: 1,
@@ -20,7 +19,6 @@ const state = {
   isBurnoutActive: false
 };
 
-// ─── DOM References ───
 const el = {
   projectSelect: document.getElementById('projectSelect'),
   addMemberBtn: document.getElementById('addMemberBtn'),
@@ -51,7 +49,6 @@ const el = {
     done: document.getElementById('counter-done')
   },
 
-  // Modals
   createTaskModal: document.getElementById('createTaskModal'),
   createTaskForm: document.getElementById('createTaskForm'),
   taskAssigneeSelect: document.getElementById('taskAssignee'),
@@ -80,7 +77,6 @@ const el = {
   toastContainer: document.getElementById('toastContainer')
 };
 
-// ─── Initialization ───
 async function initApp() {
   setupEventListeners();
   setupDragAndDrop();
@@ -88,7 +84,6 @@ async function initApp() {
   await loadBoardData();
 }
 
-// ─── API Calls ───
 async function loadProjects() {
   try {
     const res = await fetch('/api/projects');
@@ -161,11 +156,7 @@ function populateAssigneeDropdowns() {
   `).join('');
 }
 
-/**
- * Render Team Roster & Workload Balancing
- * THE VIBE CHECK: If any user has more than 5 tasks in 'In Progress',
- * their avatar background must pulse red.
- */
+
 function renderTeamRoster() {
   const countsByUser = {};
   state.tasks.forEach(t => {
