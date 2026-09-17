@@ -1,0 +1,18 @@
+{
+  "name": "kanban-flow",
+  "version": "1.0.0",
+  "description": "Streamlined task management application with Kanban-style organization, custom CRUD API, PostgreSQL, and Workload Balancing burnout warning.",
+  "main": "server/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "db:init": "node server/db_init.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}
